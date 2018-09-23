@@ -1,0 +1,20 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <button id="placeOrder" class="btn btn-info">Place Order</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <ul id="event-list"></ul>
+    </div>
+</div>
+
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/ordering.js"></script>
