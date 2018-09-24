@@ -4,7 +4,7 @@
 const connection = new signalR.HubConnectionBuilder().withUrl("/ordering-events").build();
 
 document.getElementById("placeOrder").addEventListener("click", event => {
-    var order = {
+  let order = {
         customerName: "Maria",
         orderLines: [
             { productName: "Blue Cap", quantity: 1 },
@@ -26,7 +26,7 @@ connection.on("orderPlaced", orderResult => {
 connection.start().catch(err => console.error(err.toString()));
 
 const postOrder = order => {
-    var request = new XMLHttpRequest();
+    let request = new XMLHttpRequest();
     request.onreadystatechange = () => {
         if (request.readyState === 4) {
             if (request.status !== 200) {
