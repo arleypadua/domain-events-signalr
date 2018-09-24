@@ -1,7 +1,9 @@
 ﻿const eventList = document.getElementById("event-list");
+
+// Creating the connection with the SignalR endpoint defined on the class Startup.cs
 const connection = new signalR.HubConnectionBuilder().withUrl("/ordering-events").build();
 
-document.getElementById("placeOrder").addEventListener("click", (event) => {
+document.getElementById("placeOrder").addEventListener("click", event => {
     var order = {
         customerName: "Maria",
         orderLines: [
@@ -15,10 +17,12 @@ document.getElementById("placeOrder").addEventListener("click", (event) => {
     addEventToList("Place order requested. Waiting server response...");
 });
 
-connection.on("orderPlaced", function (orderResult) {
+// Listening to the order placed event being fired by OrderingEventsClientDispatcher
+connection.on("orderPlaced", orderResult => {
     addEventToList(`Order with id ${orderResult.orderId} placed.`);
 });
 
+// Starting the connection with the server
 connection.start().catch(err => console.error(err.toString()));
 
 const postOrder = order => {

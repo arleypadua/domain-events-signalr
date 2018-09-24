@@ -17,6 +17,7 @@ namespace Ordering.Api.RealTime
 
         public Task Handle(OrderPlacedEvent @event, CancellationToken cancellationToken)
         {
+            // Ideally this should send this event only to clients interested on this event. Possibly based on the current user.
             return _hubContext.Clients.All.SendAsync("orderPlaced", @event, cancellationToken);
         }
     }

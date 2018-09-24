@@ -18,11 +18,8 @@ namespace Ordering.Service.Handlers
 
         public async Task<Unit> Handle(PlaceOrderCommand request, CancellationToken cancellationToken)
         {
-            // Manipulate your domain object
-            // Persist it
-            // Publish events
-
             // Wait for the matter of the example
+            // Ideally here you should manipulate your domain object, persist it and publish events.
             await Task.Delay(2000, cancellationToken);
 
             await _mediator.Publish(new OrderPlacedEvent { OrderId = Guid.NewGuid() }, cancellationToken);
