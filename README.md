@@ -9,4 +9,4 @@ This repo contains an example on how create an abstraction layer to have an appl
 
 ## More details
 * [🇧🇷 Commands + Domain Events + Real time notification na Prática](https://medium.com/@arleypadua/commands-domain-events-real-time-notification-na-pr%C3%A1tica-a925ecadd0fc)
-* 🇺🇸 Commands + Domain Events + Real time notification in practice (coming soon)
+* [🇺🇸 Commands + Domain Events + Real time notification in practice](https://medium.com/@arleypadua/commands-domain-events-real-time-notification-hands-on-6694d9868056)
